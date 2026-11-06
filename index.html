@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sabiha Akbar, Software Engineer specializing in ASP.NET, C#, APIs, databases and software development.">
+  <title>Sabiha Akbar | Software Engineer</title>
+  <style>
+    :root {
+      --purple: #5426a8;
+      --dark: #211638;
+      --muted: #706b7c;
+      --light: #f7f5fb;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1100px, 90%); margin: auto; }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eeeaf4;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.96);
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo { font-size: 23px; font-weight: 800; color: var(--purple); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a:hover { color: var(--purple); }
+
+    .hero {
+      padding: 110px 0;
+      background: linear-gradient(120deg, #f8f6fc, #fff);
+    }
+
+    .hero-content { max-width: 760px; }
+
+    .eyebrow {
+      color: var(--purple);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1.12;
+      margin: 18px 0;
+    }
+
+    h1 span { color: var(--purple); }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .actions { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 7px;
+      font-weight: bold;
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--purple);
+      border: 1px solid var(--purple);
+    }
+
+    section { padding: 75px 0; }
+
+    .soft { background: var(--light); }
+
+    .section-title { margin-bottom: 35px; }
+
+    .section-title h2 { font-size: 34px; margin-bottom: 8px; }
+
+    .section-title p { color: var(--muted); }
+
+    .about-text { max-width: 850px; color: var(--muted); }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 10px 17px;
+      border-radius: 6px;
+      background: white;
+      border: 1px solid #e9e3f2;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .project {
+      padding: 25px;
+      border: 1px solid #eeeaf4;
+      border-radius: 12px;
+      background: white;
+      transition: .2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px #21163812;
+    }
+
+    .project h3 { color: var(--purple); margin-bottom: 12px; }
+
+    .project p { color: var(--muted); font-size: 15px; }
+
+    .experience {
+      border-left: 3px solid var(--purple);
+      padding: 5px 0 5px 25px;
+      margin-bottom: 28px;
+    }
+
+    .experience h3 { font-size: 20px; }
+
+    .experience .date { color: var(--purple); font-size: 14px; font-weight: bold; }
+
+    .experience p { color: var(--muted); margin-top: 8px; }
+
+    .contact {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .contact p { color: #d2c9e0; margin: 12px 0 25px; }
+
+    .contact .btn { background: white; color: var(--purple); }
+
+    footer {
+      background: #170f25;
+      color: #c8bfd5;
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media(max-width: 650px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      nav ul { gap: 12px 18px; }
+      .hero { padding: 75px 0; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#">Sabiha Akbar.</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Software Engineer | ASP.NET Developer</div>
+        <h1>Building reliable software and <span>meaningful solutions.</span></h1>
+        <p>
+          I'm Sabiha Akbar, a software developer experienced in
+          building web applications, APIs, database-driven systems,
+          email management solutions and background services.
+          I enjoy solving complex problems and turning ideas into
+          practical software.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#projects">Explore My Work</a>
+          <a class="btn secondary" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little about my professional journey</p>
+      </div>
+      <p class="about-text">
+        I am a Software Engineer with a Bachelor's degree in Computer
+        Science from Bahria University. My experience includes developing
+        applications from scratch, contributing to existing codebases,
+        integrating third-party APIs, designing backend functionality,
+        maintaining databases and troubleshooting complex software issues.
+        <br><br>
+        My primary development stack is C# and ASP.NET. I am also
+        expanding my knowledge of AI-powered applications and automation
+        to build the next generation of useful software.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="soft">
+    <div class="container">
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+        <p>Technologies and tools I work with</p>
+      </div>
+      <div class="skills">
+        <span class="skill">C#</span>
+        <span class="skill">ASP.NET MVC</span>
+        <span class="skill">ASP.NET Core MVC</span>
+        <span class="skill">.NET Framework</span>
+        <span class="skill">Entity Framework</span>
+        <span class="skill">SQL Server</span>
+        <span class="skill">MongoDB</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">jQuery</span>
+        <span class="skill">AJAX</span>
+        <span class="skill">HTML5</span>
+        <span class="skill">CSS3</span>
+        <span class="skill">MailKit</span>
+        <span class="skill">IMAP / SMTP</span>
+        <span class="skill">API Integration</span>
+        <span class="skill">Background Services</span>
+        <span class="skill">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>Selected software development work</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <h3>Multi-Mailbox Email Management System</h3>
+          <p>
+            Developed a Mailbird-style email management system supporting
+            multiple email accounts, IMAP/SMTP communication, mailbox
+            synchronization, email retrieval and database-backed storage.
+          </p>
+        </article>
+
+        <article class="project">
+          <h3>Taxi Booking & Management System</h3>
+          <p>
+            Worked on a taxi booking platform with booking workflows,
+            driver management, tracking functionality and backend
+            integrations.
+          </p>
+        </article>
+
+        <article class="project">
+          <h3>Web Reporting System</h3>
+          <p>
+            Developed reporting functionality with database queries,
+            data processing and structured reporting for business
+            operations.
+          </p>
+        </article>
+
+        <article class="project">
+          <h3>Desktop & Background Services</h3>
+          <p>
+            Built and maintained desktop utilities and background
+            services for scheduled processing, email retrieval,
+            synchronization and automated tasks.
+          </p>
+        </article>
+
+        <article class="project">
+          <h3>API Development & Integrations</h3>
+          <p>
+            Developed and integrated REST APIs and third-party services,
+            including payment and mapping integrations.
+          </p>
+        </article>
+
+        <article class="project">
+          <h3>Security Research</h3>
+          <p>
+            Conducted website security research, identified
+            vulnerabilities across 2,000+ websites and prepared
+            vulnerability reports using OWASP concepts.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="soft">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p>My professional background</p>
+      </div>
+
+      <div class="experience">
+        <h3>ASP.NET Web Developer — Slash International</h3>
+        <div class="date">February 2024 – Present</div>
+        <p>
+          Developing and maintaining web applications, implementing
+          backend functionality, integrating APIs, working with
+          databases, improving legacy code and resolving software bugs.
+        </p>
+      </div>
+
+      <div class="experience">
+        <h3>Independent Security Researcher</h3>
+        <div class="date">January 2020 – April 2024</div>
+        <p>
+          Researched website security, identified vulnerabilities,
+          analyzed application behavior and documented security findings.
+        </p>
+      </div>
+
+      <div class="experience">
+        <h3>Website Security Researcher — Shiraz</h3>
+        <div class="date">January 2021 – January 2022</div>
+        <p>
+          Worked on website security research and vulnerability
+          identification.
+        </p>
+      </div>
+
+      <div class="experience">
+        <h3>Freelance AI & Data Automation Specialist</h3>
+        <div class="date">January 2021 – January 2022</div>
+        <p>
+          Worked on freelance automation and data-related tasks.
+        </p>
+      </div>
+
+      <div class="experience">
+        <h3>Bachelor of Computer Science — Bahria University</h3>
+        <div class="date">2016 – 2020</div>
+        <p>Undergraduate degree in Computer Science.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Let's Connect</h2>
+        <p>Interested in working together or discussing an opportunity?</p>
+      </div>
+      <p>Email: sabeha.akber@gmail.com</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn" href="mailto:sabeha.akber@gmail.com">Send Me an Email</a>
+        <a class="btn" href="https://github.com/sabeehaa" target="_blank" rel="noopener">GitHub Profile</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Sabiha Akbar. All rights reserved.
+</footer>
+
+</body>
+</html>
